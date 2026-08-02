@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+      - name: Run shellcheck
+        run: |
+          shellcheck -S warning install.sh agent-stack tests/test-agent-stack.sh
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make scripts executable
+        run: chmod +x install.sh agent-stack tests/test-agent-stack.sh
+      - name: Run tests
+        run: bash tests/test-agent-stack.sh
+
+  install-test:
+    name: Install Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get install -y jq
+      - name: Test installer (dry run)
+        run: |
+          chmod +x install.sh
+          export AGENT_STACK_DIR="$HOME/.agent-stack-test"
+          export AGENT_STACK_BIN="$HOME/.local/bin"
+          mkdir -p "$AGENT_STACK_BIN"
+          bash install.sh
+          echo "Install completed with exit code $?"
+          ls -la "$AGENT_STACK_DIR/"
+
+  language-check:
+    name: English Only
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for non-English strings
+        run: |
+          GERMAN=$(grep -rlP '\xc3[\xa4\xb6\xbc\x9f]' --include='*.sh' --exclude-dir=tests . || true)
+          if [[ -n "$GERMAN" ]]; then
+            echo "Files with German characters:"
+            echo "$GERMAN"
+            exit 1
+          fi
+          echo "All clear."
