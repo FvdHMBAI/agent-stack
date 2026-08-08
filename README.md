@@ -184,6 +184,20 @@ We welcome contributions to any component. Each has its own repository with spec
 
 All components use shellcheck for linting and have CI pipelines.
 
+## Pricing
+
+| | Free | Pro | Enterprise |
+|---|:---:|:---:|:---:|
+| Pre-execution guards | 11 | 18+ | Custom |
+| PII detection | 10 EU countries | + ML-powered | + custom countries |
+| Model routing, knowledge graphs, overnight automation | Yes | Yes | Yes |
+| EU AI Act compliance reports | . | Yes | Yes |
+| Managed Compliance Shield (hosted in DE) | . | Yes | On-premise option |
+| Support | Community | Priority (24h) | Dedicated + SLA |
+| **Price** | **EUR 0** | **EUR 79/dev/month** | **Custom** |
+
+[Full comparison and FAQ](BUNDLE.md) · [Get Pro](https://agentstack.promptandbuild.de) · [Enterprise inquiry](mailto:enterprise@promptandbuild.de)
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
