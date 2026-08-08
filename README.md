@@ -6,6 +6,10 @@
 
 **Stop building AI agents blind.** AgentStack gives you security, routing, automation, knowledge graphs, and self-improvement — in one install.
 
+<p align="center">
+  <img src="demo/demo.gif" alt="AgentStack Demo" width="700">
+</p>
+
 Most teams bolt together AI agent tooling piece by piece: a prompt filter here, a model proxy there, a cron job for maintenance. AgentStack is the integrated alternative — five battle-tested components that work together out of the box.
 
 ## Quick Start
