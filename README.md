@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/FvdHMBAI/agent-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/FvdHMBAI/agent-stack/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/FvdHMBAI/agent-stack?style=social)](https://github.com/FvdHMBAI/agent-stack/stargazers)
 
 **Stop building AI agents blind.** AgentStack gives you security, routing, automation, knowledge graphs, and self-improvement — in one install.
 
@@ -203,3 +204,14 @@ All components use shellcheck for linting and have CI pipelines.
 MIT License. See [LICENSE](LICENSE) for details.
 
 All individual components are also MIT licensed.
+
+---
+
+<p align="center">
+  Built by <a href="https://promptandbuild.de">Prompt & Build</a>.<br>
+  Five production-tested components. One install. Zero cloud dependencies.
+</p>
+
+<p align="center">
+  If AgentStack helps you build safer AI agents, consider giving it a <a href="https://github.com/FvdHMBAI/agent-stack">star</a>. It helps others find it.
+</p>
